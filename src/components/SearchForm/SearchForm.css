@@ -75,7 +75,6 @@
 
   .search-form__input {
     max-height: 56px;
-    /* position: relative; */
     width: 98%;
     border: 1px solid rgba(209, 210, 214, 1);
     border-radius: 50px;

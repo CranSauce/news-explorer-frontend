@@ -8,8 +8,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  /* width: 100%;
-  height: 100%; */
 }
 
 .card__image-container {
@@ -108,7 +106,6 @@
 }
 
 
-/* Styling for keyword box in the top left corner */
 .card__keyword {
   position: absolute;
   top: 10px;
