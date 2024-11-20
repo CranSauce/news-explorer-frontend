@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 
-function Navigation({ isSavedNews, openModal }) {
+function Navigation({ isSavedNews, isLoggedIn, handleLogout, openModal }) {
   const isMobile = useMediaQuery({ query: "(max-width: 320px)" });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,12 +30,14 @@ function Navigation({ isSavedNews, openModal }) {
               <Link to="/" className="navigation__mobile-menu-home">
                 Home
               </Link>
-              <button
-                className="navigation__mobile-menu-signin"
-                onClick={() => openModal("login")}
-              >
-                Sign In
-              </button>
+              {!isLoggedIn && (
+                <button
+                  className="navigation__mobile-menu-signin"
+                  onClick={() => openModal("login")}
+                >
+                  Sign In
+                </button>
+              )}
             </div>
           )}
         </>
@@ -58,7 +60,17 @@ function Navigation({ isSavedNews, openModal }) {
             >
               Home
             </Link>
-            {!isSavedNews && (
+            {isLoggedIn && (
+    <Link
+      to="/saved-news"
+      className={`navigation__saved-btn nav-item ${
+        isSavedNews ? "saved-news" : ""
+      }`}
+    >
+      Saved Articles
+    </Link>
+  )}
+            {!isLoggedIn && !isSavedNews && (
               <button
                 className="navigation__signin-btn nav-item"
                 onClick={() => openModal("login")}
@@ -66,23 +78,14 @@ function Navigation({ isSavedNews, openModal }) {
                 Sign in
               </button>
             )}
-            {isSavedNews && (
-              <Link
-                to="/saved-news"
-                className={`navigation__saved-btn nav-item ${
-                  isSavedNews ? "saved-news" : ""
-                }`}
-              >
-                Saved Articles
-              </Link>
-            )}
-            {isSavedNews && (
+            {isLoggedIn && (
               <button
                 className={`navigation__logout-btn nav-item ${
                   isSavedNews ? "saved-news" : ""
                 }`}
+                onClick={handleLogout}
               >
-                Elise
+                Logout
               </button>
             )}
           </div>

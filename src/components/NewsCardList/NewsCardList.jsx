@@ -2,13 +2,15 @@ import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 
-function NewsCardList({ articles, visibleArticles, openModal }) {
+function NewsCardList({ articles, visibleArticles, openModal, isLoggedIn }) {
   return (
-    <div className="news-card-list">
+    <ul className="news-card-list">
       {articles.slice(0, visibleArticles).map((article, index) => (
-        <NewsCard key={index} article={article} openModal={openModal} />
+        <li key={index}>
+          <NewsCard article={article} openModal={openModal} isLoggedIn={isLoggedIn} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

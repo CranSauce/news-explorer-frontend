@@ -16,10 +16,12 @@ function App() {
   const [modalType, setModalType] = useState("");
   const modalRef = useRef();
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [visibleArticles, setVisibleArticles] = useState(3);
+  const [savedArticles, setSavedArticles] = useState([]);
 
   const handleSearch = async (query) => {
     if (!query.trim()) {
@@ -45,6 +47,14 @@ function App() {
   const handleSubmit = (data) => {
     console.log(data);
     closeModal();
+  };
+
+  const saveArticle = (article) => {
+    setSavedArticles((prev) => [...prev, article]);
+  };
+
+  const removeArticle = (articleId) => {
+    setSavedArticles((prev) => prev.filter((article) => article.id !== articleId));
   };
 
   const openModal = (type) => {
@@ -95,7 +105,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <Header openModal={openModal} onSearch={handleSearch} />
+                  <Header openModal={openModal} onSearch={handleSearch} isLoggedIn={isLoggedIn} />
                   <Main
                     articles={articles}
                     loading={loading}
@@ -103,6 +113,7 @@ function App() {
                     visibleArticles={visibleArticles}
                     setVisibleArticles={setVisibleArticles}
                     openModal={openModal}
+                    isLoggedIn={isLoggedIn}
                   />
                   <About />
                 </>
@@ -110,7 +121,11 @@ function App() {
             />
             <Route
               path="/saved-news"
-              element={<SavedNews openModal={openModal} />}
+              element={<SavedNews 
+                isLoggedIn={isLoggedIn}
+                openModal={openModal}
+                savedArticles={savedArticles}
+                removeArticle={removeArticle} />}
             />
           </Routes>
           <Footer />
@@ -127,7 +142,7 @@ function App() {
            isLogin={modalType === "login"}
          >
            {modalType === "login" ? (
-             <LoginForm onSubmit={handleSubmit} />
+             <LoginForm /> 
            ) : (
              <SignupForm onSubmit={handleSubmit} />
            )}

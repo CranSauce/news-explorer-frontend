@@ -1,4 +1,6 @@
 .navigation {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   position: absolute;
   width: 100%;
   height: 80px;
@@ -16,7 +18,7 @@
 }
 
 .navigation__logo {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -41,8 +43,12 @@
   color: black;
 }
 
-.navigation__saved-btn {
+.navigation__saved-btn.saved-news {
   color: black;
+}
+
+.navigation__saved-btn{
+  color: white;
 }
 
 .navigation__mobile-menu {
@@ -124,11 +130,30 @@
   align-items: center;
 }
 
-.navigation__logout-btn {
+.navigation__logout-btn.saved-news {
   background-image: url(../../assets/logout.svg);
   background-repeat: no-repeat;
   background-position: right;
   background-color: white;
+  color: black;
+  border-radius: 100px;
+  height: 40px;
+  justify-content: center;
+  font-weight: 500;
+  padding: 0 10px 0 15px;
+  align-items: center;
+  text-align: left;
+  margin-right: 100px;
+  width: 100px;
+  border: 1px solid rgba(209, 210, 214, 1);
+}
+
+.navigation__logout-btn {
+  background-image: url(../../assets/wlogout.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: transparent;
+  color: white;
   border-radius: 100px;
   height: 40px;
   justify-content: center;
@@ -182,6 +207,7 @@
   .navigation {
     position: absolute;
     width: 100%;
+    padding: 0;
     height: 66px;
     display: flex;
     align-items: center;
@@ -214,7 +240,7 @@
   }
 
   .navigation__signin-btn {
-    margin-right: 40px;
+    margin-right: 20px;
     width: 128px;
     height: 26px;
     line-height: 24px;
@@ -229,7 +255,63 @@
   .navigation__buttons {
     align-items: center;
     gap: 16px;
+    margin: 0;
   }
+
+  .navigation__logout-btn{
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 484px) {
+  .navigation.nav {
+    height: auto;
+    max-width:484px;
+    padding: 8px 16px;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+
+  .navigation.navigation__saved-news{
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .navigation__logo {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: 0px; /* Separate it visually from buttons */
+  }
+
+  .navigation__buttons {
+    gap: 8px;
+    font-size: 14px;
+    
+    flex-wrap: wrap; /* Buttons can stack or align flexibly */
+    justify-content: center;
+  }
+
+  .navigation__signin-btn.nav-item{
+    margin-right: 10px;
+  }
+
+  .navigation__home-btn.nav-item.saved-news{
+    font-size: 14px;
+  }
+
+
+  .navigation__logout-btn.nav-item.saved-news {
+    margin: 0;
+    width: auto;
+    padding: 4px 8px;
+    font-size: 14px;
+    width: 70px;
+  }
+
+  .navigation__saved-news {
+    padding: 8px 16px;
+  }
+
 }
 
 @media screen and (max-width: 320px) {
@@ -240,6 +322,7 @@
     width: 100%;
     height: 56px;
     display: flex;
+    padding: 0;
     align-items: center;
     justify-content: space-between;
     background: transparent;

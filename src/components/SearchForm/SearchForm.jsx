@@ -10,7 +10,7 @@ function SearchForm({ onSearch }) {
   };
 
   return (
-    <div className="search-form">
+    <form className="search-form">
       <input
         type="text"
         className="search-form__input"
@@ -21,7 +21,7 @@ function SearchForm({ onSearch }) {
       <button className="search-form__btn" onClick={handleSubmit}>
         Search
       </button>
-    </div>
+    </form>
   );
 }
 

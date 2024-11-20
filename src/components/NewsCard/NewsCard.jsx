@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import "./NewsCard.css";
 
 function NewsCard({ article, isSavedNews, keyword, openModal }) {
@@ -15,7 +15,10 @@ function NewsCard({ article, isSavedNews, keyword, openModal }) {
   const formattedDate = new Date(publishedAt).toLocaleDateString();
 
   const handleSaveToggle = () => {
-    if (!isSavedNews) {
+    if (isSavedNews) {
+      // Call a function to remove the saved article
+      console.log("Removing article:", title); // Replace with actual callback
+    } else {
       setIsSaved(!isSaved);
     }
   };
@@ -23,25 +26,40 @@ function NewsCard({ article, isSavedNews, keyword, openModal }) {
   return (
     <div className="card">
       <div className="card__image-container">
-        {urlToImage && <img src={urlToImage} alt={title} className="card__image" />}
-        
+        {/* Display image or placeholder */}
+        {urlToImage ? (
+          <img src={urlToImage} alt={title} className="card__image" />
+        ) : (
+          <div className="card__image-placeholder">Image Not Available</div>
+        )}
+
+        {/* Display keyword for saved articles */}
         {isSavedNews && (
           <div className="card__keyword">{keyword}</div>
         )}
 
+        {/* Save/Remove button and slide-out */}
         <div className="card__save-btn-container">
           <button
-            className={`card__save-btn ${isSaved ? "card__save-btn_filled" : ""}`}
+            className={`card__save-btn ${
+              isSaved || isSavedNews ? "card__save-btn_filled" : ""
+            }`}
             onClick={handleSaveToggle}
-            aria-label={isSaved ? "Unsave article" : "Save article"}
+            aria-label={isSavedNews ? "Remove article" : isSaved ? "Unsave article" : "Save article"}
           ></button>
           {!isSaved && !isSavedNews && (
             <button className="card__slide-out-btn" onClick={() => openModal("login")}>
               Sign in to save articles
             </button>
           )}
+          {isSavedNews && (
+            <button className="card__slide-out-btn" onClick={handleSaveToggle}>
+              Remove article
+            </button>
+          )}
         </div>
       </div>
+
       <div className="card__content">
         <span className="card__date">{formattedDate}</span>
         <h2 className="card__title">{title}</h2>

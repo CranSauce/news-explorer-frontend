@@ -10,6 +10,7 @@ function Main({
   visibleArticles,
   setVisibleArticles,
   openModal,
+  isLoggedIn
 }) {
   const handleShowMore = () => {
     setVisibleArticles((prev) => prev + 3);
@@ -27,16 +28,25 @@ function Main({
           <p>No results found.</p>
         )}
 
-        <NewsCardList articles={articles} visibleArticles={visibleArticles} openModal={openModal}/>
-
-        {articles.length > visibleArticles && (
-          <button
-            type="button"
-            className="main__more-btn"
-            onClick={handleShowMore}
-          >
-            Show more
-          </button>
+        {/* Wrap search results in a <section> */}
+        {articles.length > 0 && (
+          <section className="main__search-results">
+            <NewsCardList
+              articles={articles}
+              visibleArticles={visibleArticles}
+              openModal={openModal}
+              isLoggedIn={isLoggedIn}
+            />
+            {articles.length > visibleArticles && (
+              <button
+                type="button"
+                className="main__more-btn"
+                onClick={handleShowMore}
+              >
+                Show more
+              </button>
+            )}
+          </section>
         )}
       </div>
     </main>

@@ -7,27 +7,49 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__content">
-        <div className="footer__links">
-          <a href="/" className="footer__link">
-            Home
-          </a>
+        {/* Navigation Section */}
+        <nav aria-label="Footer navigation" className="footer__nav">
+          <ul className="footer__links">
+            <li>
+              <a href="/" className="footer__link">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://tripleten.com"
+                className="footer__link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                TripleTen
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Social Media Icons */}
+        <div className="footer__icons">
           <a
-            href="https://tripleten.com"
-            className="footer__link"
+            href="https://github.com/CranSauce"
             target="_blank"
             rel="noreferrer"
+            className="footer__icon-link"
           >
-            TripleTen
+            <img src={githubIcon} alt="GitHub" className="footer__icon" />
           </a>
-        </div>
-
-        <div className="footer__icons">
-          <img src={githubIcon} alt="GitHub" className="footer__icon" />
-
-          <img src={facebookIcon} alt="Facebook" className="footer__icon" />
+          <a
+            href="https://facebook.com/profile.php?id=100025919100952"
+            target="_blank"
+            rel="noreferrer"
+            className="footer__icon-link"
+          >
+            <img src={facebookIcon} alt="Facebook" className="footer__icon" />
+          </a>
         </div>
       </div>
 
+      {/* Footer Copyright */}
       <div className="footer__copyright">
         &copy; {new Date().getFullYear()} Andrew Thomas
       </div>

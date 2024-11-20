@@ -5,35 +5,34 @@ function LoginForm({ onSubmit }) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (validateForm()) {
-  //     onSubmit({ email, password });
-  //   }
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      onSubmit({ email, password });
+      handleLogin();
+    }
+  };
 
-  // const validateForm = () => {
-  //   let valid = true;
-  //   const newErrors = {};
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {};
 
-  
-  //   if (!/\S+@\S+\.\S+/.test(email)) {
-  //     newErrors.email = "Please enter a valid email.";
-  //     valid = false;
-  //   }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Please enter a valid email.";
+      valid = false;
+    }
 
-    
-  //   if (password.length < 6) {
-  //     newErrors.password = "Password must be at least 6 characters long.";
-  //     valid = false;
-  //   }
+    if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long.";
+      valid = false;
+    }
 
-  //   setErrors(newErrors);
-  //   return valid;
-  // };
+    setErrors(newErrors);
+    return valid;
+  };
 
   return (
-    <>
+    <div onSubmit={handleSubmit} className="modal__form">
       <label className="modal__label">
         Email
         <input
@@ -56,9 +55,11 @@ function LoginForm({ onSubmit }) {
           placeholder="Enter password"
           required
         />
-        {errors.password && <span className="modal__error">{errors.password}</span>}
+        {errors.password && (
+          <span className="modal__error">{errors.password}</span>
+        )}
       </label>
-    </>
+    </div>
   );
 }
 

@@ -5,13 +5,13 @@ function SignupForm({ onSubmit }) {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     onSubmit({ email, password, username });
-//   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ email, password, username });
+  };
 
   return (
-    <>
+    <form onSubmit={handleSubmit} className="modal__form">
       <label className="modal__label">
         Email
         <input
@@ -45,7 +45,10 @@ function SignupForm({ onSubmit }) {
           required
         />
       </label>
-    </>
+      <button type="submit" className="modal__submit-btn">
+        Sign Up
+      </button>
+    </form>
   );
 }
 
