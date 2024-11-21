@@ -16,7 +16,7 @@ function NewsCard({ article, isSavedNews, keyword, openModal }) {
 
   const handleSaveToggle = () => {
     if (isSavedNews) {
-      // Call a function to remove the saved article
+
       console.log("Removing article:", title); // Replace with actual callback
     } else {
       setIsSaved(!isSaved);
@@ -26,14 +26,13 @@ function NewsCard({ article, isSavedNews, keyword, openModal }) {
   return (
     <div className="card">
       <div className="card__image-container">
-        {/* Display image or placeholder */}
         {urlToImage ? (
           <img src={urlToImage} alt={title} className="card__image" />
         ) : (
           <div className="card__image-placeholder">Image Not Available</div>
         )}
 
-        {/* Display keyword for saved articles */}
+   
         {isSavedNews && (
           <div className="card__keyword">{keyword}</div>
         )}

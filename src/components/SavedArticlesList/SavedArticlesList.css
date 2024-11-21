@@ -1,52 +1,47 @@
 .saved-articles-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row */
-    gap: 20px; /* Maintain gap between cards */
-    padding: 30px;
-    list-style: none;
-    margin: 0;
-    box-sizing: border-box; /* Ensure padding doesn't affect layout */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row */
+  gap: 40px; /* Maintain gap between cards */
+  padding: 80px 30px; /* Add padding inside the list container */
+  margin: 30px 0 0 0; /* Ensure proper spacing from SavedNewsHeader */
+  list-style: none;
+  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+}
+
+/* Individual list item styling */
+.saved-articles-list li {
+  list-style: none;
+}
+
+@media screen and (max-width: 960px) {
+  .saved-articles-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px;
+    margin-top: 20px; /* Adjust margin for medium screens */
   }
-  
+}
+
+@media screen and (max-width: 728px) {
+  .saved-articles-list {
+    grid-template-columns: repeat(3, 1fr); /* Show 2 cards per row */
+    gap: 16px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  .saved-articles-list {
+    grid-template-columns: repeat(1, 1fr); /* Keep 1 card per row */
+    gap: 12px;
+    padding: 10px;
+    margin-top: 32px; /* Adjust spacing for very small screens */
+  }
+
   .saved-articles-list li {
-    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  @media screen and (max-width: 960px) {
-    .saved-articles-list {
-      grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row on medium screens */
-      gap: 16px; /* Reduce gap for smaller screens */
-      padding: 20px;
-    }
-  }
-  
-  @media screen and (max-width: 728px) {
-    .saved-articles-list {
-      grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row on smaller screens */
-      gap: 16px; /* Reduce gap further */
-      padding: 20px;
-    }
-  }
-  
-  @media screen and (max-width: 557px) {
-    .saved-articles-list {
-      grid-template-columns: repeat(2, 1fr); /* Show 2 cards per row on smaller screens */
-      gap: 16px; /* Reduce gap further */
-      padding: 20px;
-    }
-  }
-  
-  @media screen and (max-width: 421px) {
-    .saved-articles-list {
-      grid-template-columns: repeat(1, 1fr); /* Keep 1 card per row on very small screens */
-      gap: 12px; /* Reduce gap further */
-      padding: 10px;
-    }
-  
-    .saved-articles-list li {
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
-  }
-  
+}

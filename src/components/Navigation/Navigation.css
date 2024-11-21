@@ -230,7 +230,7 @@
 
   .navigation__logo {
     text-decoration: none;
-    margin-left: 40px;
+    margin-left: 25px;
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
@@ -261,58 +261,20 @@
   .navigation__logout-btn{
     margin-right: 20px;
   }
-}
 
-@media screen and (max-width: 484px) {
-  .navigation.nav {
-    height: auto;
-    max-width:484px;
-    padding: 8px 16px;
-    flex-wrap: wrap; 
-    justify-content: center;
-  }
-
-  .navigation.navigation__saved-news{
-    justify-content: space-between;
-    display: flex;
-  }
-
-  .navigation__logo {
-    font-size: 16px;
-    margin-left: 10px;
-    margin-bottom: 0px; /* Separate it visually from buttons */
-  }
-
-  .navigation__buttons {
-    gap: 8px;
-    font-size: 14px;
-    
-    flex-wrap: wrap; /* Buttons can stack or align flexibly */
-    justify-content: center;
-  }
-
-  .navigation__signin-btn.nav-item{
-    margin-right: 10px;
+  .navigation__logout-btn.saved-news{
+    margin-right: 20px;
   }
 
   .navigation__home-btn.nav-item.saved-news{
-    font-size: 14px;
+    margin-right: 20px;
   }
 
-
-  .navigation__logout-btn.nav-item.saved-news {
-    margin: 0;
-    width: auto;
-    padding: 4px 8px;
-    font-size: 14px;
-    width: 70px;
+  .navigation__menu-btn{
+    margin-right: 10px;
   }
-
-  .navigation__saved-news {
-    padding: 8px 16px;
-  }
-
 }
+
 
 @media screen and (max-width: 320px) {
   .navigation {
@@ -329,6 +291,7 @@
     z-index: 3;
     color: white;
     box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+    flex-shrink: 1;
   }
 
   .navigation__saved-news {

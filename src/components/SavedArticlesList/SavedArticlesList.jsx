@@ -1,23 +1,24 @@
-import React from "react";
-import NewsCard from "../NewsCard/NewsCard";
-import "./SavedArticlesList.css";
+import React from 'react';
+import NewsCard from '../NewsCard/NewsCard'; // Ensure this path matches your setup
+import './SavedArticlesList.css';
 
-function SavedArticlesList({ articles, isLoggedIn, removeArticle }) {
+const mockArticles = [
+  { id: 1, title: "Mock Article 1", description: "Description of article 1" },
+  { id: 2, title: "Mock Article 2", description: "Description of article 2" },
+  { id: 3, title: "Mock Article 3", description: "Description of article 3" },
+  { id: 4, title: "Mock Article 4", description: "Description of article 4" }
+];
+
+const SavedArticlesList = ({ isLoggedIn }) => {
   return (
     <ul className="saved-articles-list">
-      {articles.map((article, index) => (
-        <li key={index}>
-          <NewsCard
-            article={article}
-            isSavedNews={true}
-            keyword={article.keyword || "Saved"}
-            isLoggedIn={isLoggedIn}
-            handleRemove={() => removeArticle(article.id)}
-          />
+      {mockArticles.map((article) => (
+        <li key={article.id}>
+          <NewsCard isLoggedIn={isLoggedIn} article={article} title={article.title} description={article.description} />
         </li>
       ))}
     </ul>
   );
-}
+};
 
 export default SavedArticlesList;

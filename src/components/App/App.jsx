@@ -16,7 +16,7 @@ function App() {
   const [modalType, setModalType] = useState("");
   const modalRef = useRef();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);

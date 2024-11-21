@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 function Navigation({ isSavedNews, isLoggedIn, handleLogout, openModal }) {
-  const isMobile = useMediaQuery({ query: "(max-width: 320px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 505px)" });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

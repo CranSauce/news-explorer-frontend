@@ -1,7 +1,7 @@
 .about {
   width: 100%;
   display: flex;
-  flex-direction: row; /* Ensures a row layout */
+  flex-direction: row; 
   gap: 40px;
   background-color: white;
   align-items: center;
@@ -11,21 +11,21 @@
 }
 
 .about__image {
-  flex-shrink: 0; /* Ensures the image doesn't shrink */
-  width: 464px; /* Set a more flexible width */
+  flex-shrink: 0; 
+  width: 464px; 
   height: 464px;
-   /* Maintain aspect ratio */
+   
   border-radius: 100%;
   object-fit: cover;
 }
 
 .about__content {
   max-width: 600px;
-  flex: 1; /* Makes content fill remaining space */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px; /* Adds spacing inside content */
+  padding: 20px; 
 }
 
 .about__title {
@@ -33,7 +33,7 @@
   font-size: 36px;
   font-weight: 400;
   line-height: 44px;
-  margin-bottom: 16px; /* Reduces margin to save space */
+  margin-bottom: 16px; 
 }
 
 .about__description {
@@ -44,29 +44,28 @@
   text-align: left;
 }
 
-/* Tablet Breakpoint (728px and below) */
 @media screen and (max-width: 728px) {
   .about {
-    flex-direction: row; /* Maintain row layout */
-    gap: 8px; /* Slightly reduce gap */
-    padding: 20px; /* Reduce padding */
+    flex-direction: row; 
+    gap: 8px; 
+    padding: 20px;
   }
 
   .about__image {
-    width: 250px; /* Shrink image for better fit */
+    width: 250px; 
     height: 250px;
   }
 
   .about__content {
-    flex-basis: calc(100% - 270px); /* Ensure content fits next to the image */
-    max-width: 450px; /* Prevent content from stretching too wide */
+    flex-basis: calc(100% - 270px);
+    max-width: 450px; 
     padding: 10px;
   }
 
   .about__title {
     font-size: 28px;
     line-height: 36px;
-    margin-bottom: 8px; /* Tighten spacing */
+    margin-bottom: 0px; 
   }
 
   .about__description {
@@ -75,18 +74,18 @@
   }
 }
 
-/* Mobile Breakpoint (450px and below) */
+
 @media screen and (max-width: 450px) {
   .about {
-    flex-direction: column; /* Switch to column layout */
+    flex-direction: column; 
     align-items: center;
-    text-align: center; /* Center-align content */
+    text-align: center; 
   }
 
   .about__image {
     width: 250px;
     height: 250px;
-    margin-bottom: 16px; /* Add spacing below image */
+    margin-bottom: 16px; 
   }
 
   .about__content {
