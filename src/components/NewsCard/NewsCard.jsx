@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import "./NewsCard.css";
 
-function NewsCard({ article, isSavedNews, keyword, openModal }) {
-  const {
-    title,
-    description,
-    urlToImage,
-    publishedAt,
-    author,
-  } = article;
+function NewsCard({ article, isSavedNews, openModal, isLoggedIn }) {
+  const { title, description, urlToImage, publishedAt, author } = article;
 
   const [isSaved, setIsSaved] = useState(false);
 
@@ -16,8 +10,7 @@ function NewsCard({ article, isSavedNews, keyword, openModal }) {
 
   const handleSaveToggle = () => {
     if (isSavedNews) {
-
-      console.log("Removing article:", title); // Replace with actual callback
+      console.log("Removing article:", title); // Replace with actual delete functionality
     } else {
       setIsSaved(!isSaved);
     }
@@ -32,28 +25,37 @@ function NewsCard({ article, isSavedNews, keyword, openModal }) {
           <div className="card__image-placeholder">Image Not Available</div>
         )}
 
-   
-        {isSavedNews && (
-          <div className="card__keyword">{keyword}</div>
-        )}
+        {isSavedNews && <div className="card__keyword">Keyword</div>}
 
-        {/* Save/Remove button and slide-out */}
         <div className="card__save-btn-container">
           <button
-            className={`card__save-btn ${
-              isSaved || isSavedNews ? "card__save-btn_filled" : ""
-            }`}
+            className={
+              isSavedNews
+                ? "card__delete-btn"
+                : `card__save-btn ${isSaved ? "card__save-btn_filled" : ""}`
+            }
             onClick={handleSaveToggle}
-            aria-label={isSavedNews ? "Remove article" : isSaved ? "Unsave article" : "Save article"}
+            aria-label={
+              isSavedNews
+                ? "Remove article"
+                : isSaved
+                ? "Unsave article"
+                : "Save article"
+            }
           ></button>
-          {!isSaved && !isSavedNews && (
-            <button className="card__slide-out-btn" onClick={() => openModal("login")}>
+
+          {!isSaved && !isSavedNews && !isLoggedIn && (
+            <button
+              className="card__slide-out-btn"
+              onClick={() => openModal("login")}
+            >
               Sign in to save articles
             </button>
           )}
+
           {isSavedNews && (
-            <button className="card__slide-out-btn" onClick={handleSaveToggle}>
-              Remove article
+            <button className="card__delete-slide" onClick={handleSaveToggle}>
+              Remove from saved
             </button>
           )}
         </div>

@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 
-function SignupForm({ onSubmit }) {
+function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit({ email, password, username });
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="modal__form">
+    <>
       <label className="modal__label">
         Email
         <input
@@ -21,6 +16,7 @@ function SignupForm({ onSubmit }) {
           className="modal__input"
           placeholder="Enter email"
           required
+          name="email"
         />
       </label>
       <label className="modal__label">
@@ -32,6 +28,7 @@ function SignupForm({ onSubmit }) {
           className="modal__input"
           placeholder="Enter password"
           required
+          name="password"
         />
       </label>
       <label className="modal__label">
@@ -43,12 +40,10 @@ function SignupForm({ onSubmit }) {
           className="modal__input"
           placeholder="Enter your username"
           required
+          name="username"
         />
       </label>
-      <button type="submit" className="modal__submit-btn">
-        Sign Up
-      </button>
-    </form>
+    </>
   );
 }
 

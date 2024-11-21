@@ -16,7 +16,8 @@ function App() {
   const [modalType, setModalType] = useState("");
   const modalRef = useRef();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(true); //Change Logged in state here
+  const [isRegistrationComplete, setIsRegistrationComplete] = useState(false);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -44,11 +45,10 @@ function App() {
     }
   };
 
-  const handleSubmit = (data) => {
-    console.log(data);
-    closeModal();
+  const handleSubmit = () => {
+    setIsRegistrationComplete(true); 
   };
-
+  
   const saveArticle = (article) => {
     setSavedArticles((prev) => [...prev, article]);
   };
@@ -64,6 +64,7 @@ function App() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setIsRegistrationComplete(false);
   };
 
   useEffect(() => {
@@ -137,9 +138,11 @@ function App() {
            isOpen={isModalOpen}
            onClose={closeModal}
            openModal={openModal}
+           onSubmit={handleSubmit}
            title={modalType === "login" ? "Sign in" : "Sign up"}
            buttonText={modalType === "login" ? "Sign in" : "Sign up"}
            isLogin={modalType === "login"}
+           isRegistrationComplete={isRegistrationComplete}
          >
            {modalType === "login" ? (
              <LoginForm /> 

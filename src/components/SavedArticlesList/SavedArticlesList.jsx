@@ -9,12 +9,12 @@ const mockArticles = [
   { id: 4, title: "Mock Article 4", description: "Description of article 4" }
 ];
 
-const SavedArticlesList = ({ isLoggedIn }) => {
+const SavedArticlesList = ({ isLoggedIn, isSavedNews }) => {
   return (
     <ul className="saved-articles-list">
       {mockArticles.map((article) => (
         <li key={article.id}>
-          <NewsCard isLoggedIn={isLoggedIn} article={article} title={article.title} description={article.description} />
+          <NewsCard isSavedNews={true} isLoggedIn={isLoggedIn} article={article} title={article.title} description={article.description} />
         </li>
       ))}
     </ul>
