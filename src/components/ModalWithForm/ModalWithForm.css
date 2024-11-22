@@ -38,12 +38,12 @@
 
 .modal__close-btn {
   position: relative;
-  bottom: 70px;
+  background-image: url(../../assets/close.svg);
+  bottom: 50px;
   left: calc(111%);
   border: none;
   background: none;
   color: white;
-  font-size: 30px;
   cursor: pointer;
   margin: 0;
   padding: 0;
@@ -119,7 +119,7 @@
 }
 
 .modal__success-message {
-  text-align: left;
+  text-align: flex-start;
   font-size: 24px;
   line-height: 28px;
   font-family: 'Roboto', sans-serif;

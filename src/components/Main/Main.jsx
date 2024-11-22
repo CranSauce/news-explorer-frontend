@@ -1,4 +1,3 @@
-import React from "react";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Preloader from "../Preloader/Preloader";
 import "./Main.css";

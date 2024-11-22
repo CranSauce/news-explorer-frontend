@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 import githubIcon from "../../assets/github.svg";
 import facebookIcon from "../../assets/facebook.svg";
@@ -7,7 +6,6 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__content">
-        {/* Navigation Section */}
         <nav aria-label="Footer navigation" className="footer__nav">
           <ul className="footer__links">
             <li>
@@ -28,7 +26,6 @@ function Footer() {
           </ul>
         </nav>
 
-        {/* Social Media Icons */}
         <div className="footer__icons">
           <a
             href="https://github.com/CranSauce"
@@ -49,7 +46,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Footer Copyright */}
       <div className="footer__copyright">
         &copy; {new Date().getFullYear()} Andrew Thomas
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function LoginForm({ onSubmit }) {
   const [email, setEmail] = useState("");
@@ -9,7 +9,6 @@ function LoginForm({ onSubmit }) {
     e.preventDefault();
     if (validateForm()) {
       onSubmit({ email, password });
-      handleLogin();
     }
   };
 

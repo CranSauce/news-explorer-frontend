@@ -47,7 +47,7 @@
 @media screen and (max-width: 728px) {
   .about {
     flex-direction: row; 
-    gap: 8px; 
+    gap: 10px; 
     padding: 20px;
   }
 
@@ -60,6 +60,7 @@
     flex-basis: calc(100% - 270px);
     max-width: 450px; 
     padding: 10px;
+    gap: 0;
   }
 
   .about__title {

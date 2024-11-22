@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./NewsCard.css";
 
 function NewsCard({ article, isSavedNews, openModal, isLoggedIn }) {

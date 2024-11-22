@@ -1,5 +1,4 @@
-import React from 'react';
-import NewsCard from '../NewsCard/NewsCard'; // Ensure this path matches your setup
+import NewsCard from '../NewsCard/NewsCard'; 
 import './SavedArticlesList.css';
 
 const mockArticles = [
@@ -9,7 +8,7 @@ const mockArticles = [
   { id: 4, title: "Mock Article 4", description: "Description of article 4" }
 ];
 
-const SavedArticlesList = ({ isLoggedIn, isSavedNews }) => {
+const SavedArticlesList = ({ isLoggedIn }) => {
   return (
     <ul className="saved-articles-list">
       {mockArticles.map((article) => (

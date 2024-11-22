@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -16,7 +16,7 @@ function App() {
   const [modalType, setModalType] = useState("");
   const modalRef = useRef();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true); //Change Logged in state here
+  const [isLoggedIn] = useState(false); //Change Logged in state here
   const [isRegistrationComplete, setIsRegistrationComplete] = useState(false);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -49,9 +49,9 @@ function App() {
     setIsRegistrationComplete(true); 
   };
   
-  const saveArticle = (article) => {
-    setSavedArticles((prev) => [...prev, article]);
-  };
+  // const saveArticle = (article) => {
+  //   setSavedArticles((prev) => [...prev, article]);
+  // };
 
   const removeArticle = (articleId) => {
     setSavedArticles((prev) => prev.filter((article) => article.id !== articleId));
