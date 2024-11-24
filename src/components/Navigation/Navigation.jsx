@@ -13,8 +13,8 @@ function Navigation({ isSavedNews, isLoggedIn, handleLogout, openModal }) {
 
   return (
     <nav
-      className={`navigation ${isMenuOpen ? "navigation-open" : ""} ${
-        isSavedNews ? "navigation__saved-news" : ""
+      className={`navigation ${isMenuOpen ? "navigation--open" : ""} ${
+        isSavedNews ? "navigation--saved-news" : ""
       }`}
     >
       {isMobile ? (
@@ -43,33 +43,18 @@ function Navigation({ isSavedNews, isLoggedIn, handleLogout, openModal }) {
         </>
       ) : (
         <>
-          <Link
-            to="/"
-            className={`navigation__logo nav-item ${
-              isSavedNews ? "saved-news" : ""
-            }`}
-          >
+          <Link to="/" className="navigation__logo nav-item">
             NewsExplorer
           </Link>
           <div className="navigation__buttons">
-            <Link
-              to="/"
-              className={`navigation__home-btn nav-item ${
-                isSavedNews ? "saved-news" : ""
-              }`}
-            >
+            <Link to="/" className="navigation__home-btn nav-item">
               Home
             </Link>
             {isLoggedIn && (
-    <Link
-      to="/saved-news"
-      className={`navigation__saved-btn nav-item ${
-        isSavedNews ? "saved-news" : ""
-      }`}
-    >
-      Saved Articles
-    </Link>
-  )}
+              <Link to="/saved-news" className="navigation__saved-btn nav-item">
+                Saved Articles
+              </Link>
+            )}
             {!isLoggedIn && !isSavedNews && (
               <button
                 className="navigation__signin-btn nav-item"
@@ -80,9 +65,7 @@ function Navigation({ isSavedNews, isLoggedIn, handleLogout, openModal }) {
             )}
             {isLoggedIn && (
               <button
-                className={`navigation__logout-btn nav-item ${
-                  isSavedNews ? "saved-news" : ""
-                }`}
+                className="navigation__logout-btn nav-item"
                 onClick={handleLogout}
               >
                 Logout

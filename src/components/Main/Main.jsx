@@ -18,7 +18,7 @@ function Main({
   return (
     <main className="main">
       <div className="main__content">
-        <h1 className="main__title">Search Results</h1>
+        <p className="main__title">Search Results</p>
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         {loading && <Preloader />}
@@ -27,7 +27,6 @@ function Main({
           <p>No results found.</p>
         )}
 
-        {/* Wrap search results in a <section> */}
         {articles.length > 0 && (
           <section className="main__search-results">
             <NewsCardList

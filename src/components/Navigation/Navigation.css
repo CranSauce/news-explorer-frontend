@@ -1,7 +1,8 @@
+/* Base navigation styles */
 .navigation {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 80px;
   display: flex;
@@ -11,10 +12,7 @@
   z-index: 100;
   color: white;
   box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
-}
-
-.a {
-  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .navigation__logo {
@@ -23,32 +21,18 @@
   font-weight: 700;
   line-height: 24px;
   text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
   text-decoration: none;
-  margin: 0 0 0 100px;
-  color: white;
+  margin-left: 100px;
+  color: inherit;
 }
 
 .navigation__menu-btn,
 .navigation__close-btn {
   border: none;
   background-color: transparent;
-  color: white;
+  color: inherit;
   font-size: 24px;
   cursor: pointer;
-}
-
-.navigation__home-btn.saved-news {
-  color: black;
-}
-
-.navigation__saved-btn.saved-news {
-  color: black;
-}
-
-.navigation__saved-btn{
-  color: white;
 }
 
 .navigation__mobile-menu {
@@ -65,54 +49,8 @@
   animation: dropdown 0.3s ease forwards;
 }
 
-.nav-item {
-  position: relative;
-}
-
-.nav-item::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.navigation__logo.nav-item::after {
-  bottom: -28px;
-}
-
-.navigation__home-btn.nav-item::after {
-  bottom: -31px;
-}
-
-.navigation__signin-btn.nav-item::after {
-  bottom: -21px;
-}
-
-.navigation__saved-btn.nav-item::after {
-  bottom: -31px;
-}
-
-.navigation__logout-btn.nav-item::after {
-  bottom: -21px;
-}
-
-.nav-item:hover::after {
-  width: 100%;
-  left: 0;
-  transform: translateX(0);
-}
-
-.saved-news.nav-item::after {
-  background-color: black;
-}
-
 .navigation__mobile-menu-home,
-.navigation__mobile-menu-saved {
+.navigation__mobile-menu-signin {
   color: white;
   font-size: 18px;
   margin: 8px 16px;
@@ -123,120 +61,140 @@
   cursor: pointer;
 }
 
-/* Desktop Buttons */
 .navigation__buttons {
   display: flex;
   gap: 54px;
   align-items: center;
 }
 
-.navigation__logout-btn.saved-news {
-  background-image: url(../../assets/logout.svg);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-color: white;
-  color: black;
+.navigation__home-btn,
+.navigation__saved-btn,
+.navigation__signin-btn,
+.navigation__logout-btn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.navigation__signin-btn,
+.navigation__logout-btn {
   border-radius: 100px;
+  padding: 0 15px;
   height: 40px;
-  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 1);
   font-weight: 500;
-  padding: 0 10px 0 15px;
-  align-items: center;
-  text-align: left;
-  margin-right: 100px;
-  width: 100px;
-  border: 1px solid rgba(209, 210, 214, 1);
 }
 
 .navigation__logout-btn {
   background-image: url(../../assets/wlogout.svg);
   background-repeat: no-repeat;
   background-position: right;
-  background-color: transparent;
-  color: white;
-  border-radius: 100px;
-  height: 40px;
-  justify-content: center;
-  font-weight: 500;
-  padding: 0 10px 0 15px;
-  align-items: center;
-  text-align: left;
   margin-right: 100px;
+  padding-right: 30px;
   width: 100px;
-  border: 1px solid rgba(209, 210, 214, 1);
+  box-sizing: border-box;
 }
 
-.navigation__home-btn,
-.navigation__signin-btn {
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: white;
+.navigation__signin-btn{
+  width: 128px;
+  margin-right: 100px;
 }
 
-.navigation__signin-btn {
-  margin-right: 115px;
-  width: 152px;
-  height: 40px;
-  border-radius: 100px;
-  opacity: 0px;
-  border: 1px solid rgba(255, 255, 255, 1);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+.nav-item {
+  position: relative;
 }
 
-.navigation__saved-news {
+.nav-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -27px; /* Positioned at the bottom of the navigation bar */
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navigation__logout-btn.nav-item::after{
+  bottom: -17px;
+}
+
+.navigation__logo.nav-item::after{
+  bottom: -23px;
+}
+.navigation__signin-btn.nav-item::after{
+  bottom: -20px;
+}
+
+.navigation__home-btn.nav-item:hover::after{
+  width: 100px;
+  left: -25px;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+
+/* Modifiers */
+.navigation--saved-news {
   background-color: white;
   color: black;
   box-shadow: 0px -1px 0px 0px rgba(209, 210, 214, 1) inset !important;
 }
 
-.navigation__saved-news .navigation__logo,
-.navigation__saved-news .navigation__menu-btn,
-.navigation__saved-news .navigation__close-btn {
+.navigation--saved-news .navigation__logo,
+.navigation--saved-news .navigation__menu-btn,
+.navigation--saved-news .navigation__close-btn {
   color: black;
 }
 
+.navigation--saved-news .navigation__home-btn,
+.navigation--saved-news .navigation__saved-btn {
+  color: black;
+}
+
+.navigation--saved-news .nav-item::after {
+  background-color: black;
+  top: 47px;
+}
+.navigation--saved-news .navigation__logo.nav-item::after {
+  background-color: black;
+  top: 50px;
+}
+.navigation--saved-news .navigation__logout-btn.nav-item::after {
+  background-color: black;
+  top: 57px;
+}
+
+.navigation--saved-news .navigation__logout-btn {
+  background-image: url(../../assets/logout.svg);
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(209, 210, 214, 1);
+}
+
+.navigation--open {
+  background: rgba(26, 27, 34, 1);
+}
+
+/* Media Queries */
 @media screen and (max-width: 728px) {
   .navigation {
-    position: absolute;
-    width: 100%;
-    padding: 0;
-    height: 66px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
-    z-index: 100;
-    color: white;
-    box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+   height: 66px;
+   box-sizing: border-box; 
   }
 
-  .navigation__saved-news {
-    background-color: white;
-    color: black;
-    box-shadow: 0px -1px 0px 0px rgba(209, 210, 214, 1) inset !important;
-  }
-
-  .navigation__saved-news .navigation__home-btn {
-    color: black;
+  .nav-item::after{
+    opacity: 0;
   }
 
   .navigation__logo {
-    text-decoration: none;
     margin-left: 25px;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
   }
 
   .navigation__signin-btn {
@@ -244,83 +202,48 @@
     width: 128px;
     height: 26px;
     line-height: 24px;
-    font-weight: 500;
     font-size: 16px;
-    font-family: "Roboto", sans-serif;
-    border-radius: 100px;
-    opacity: 0px;
-    border: 1px solid rgba(255, 255, 255, 1);
   }
 
   .navigation__buttons {
-    align-items: center;
     gap: 16px;
-    margin: 0;
   }
 
-  .navigation__logout-btn{
+  .navigation__logout-btn {
     margin-right: 20px;
   }
 
-  .navigation__logout-btn.saved-news{
-    margin-right: 20px;
-  }
-
-  .navigation__home-btn.nav-item.saved-news{
-    margin-right: 20px;
-  }
-
-  .navigation__menu-btn{
+  .navigation__menu-btn {
     margin-right: 10px;
+  }
+
+  .nav-item:hover::after {
+    width: 100%;
+    left: 0;
+    top: 4px;
   }
 }
 
-
 @media screen and (max-width: 320px) {
   .navigation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 56px;
-    display: flex;
-    padding: 0;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
     z-index: 3;
-    color: white;
-    box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
-    flex-shrink: 1;
   }
 
-  .navigation__saved-news {
-    background: white;
-  }
-
-  .navigation-open {
-    background: rgba(26, 27, 34, 1);
+  .nav-item::after{
+    opacity: 0;
   }
 
   .navigation__logo {
     font-size: 16px;
     margin-left: 16px;
-    text-decoration: none;
   }
 
   .navigation__mobile-menu {
-    position: absolute;
     top: 56px;
-    left: 0;
     border-radius: 0 0 16px 16px;
-    width: 100%;
-    background: rgba(26, 27, 34, 1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 0;
     z-index: 200;
-    animation: dropdown 0.3s ease forwards;
   }
 
   .navigation__menu-btn {
@@ -328,25 +251,27 @@
   }
 
   .navigation__mobile-menu-signin {
-    background: transparent;
-    position: relative;
-    color: white;
     border-radius: 100px;
     border: 1px solid rgba(255, 255, 255, 1);
     height: 56px;
     width: 288px;
     margin: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: transparent;
   }
 
   .navigation__mobile-menu-home {
     width: 288px;
     height: 56px;
-    align-items: center;
-
     display: flex;
+    align-items: center;
   }
 }
 
+/* Animations */
 @keyframes dropdown {
   from {
     transform: translateY(-100%);

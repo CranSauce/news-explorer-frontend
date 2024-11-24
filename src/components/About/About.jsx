@@ -12,7 +12,7 @@ function About() {
         />
       </div>
       <div className="about__content">
-        <h1 id="about-title" className="about__title">About the author</h1>
+        <p id="about-title" className="about__title">About the author</p>
         <p className="about__description">
           My name is Andrew Thomas, I’m a chef-turned-coder with a creative
           background in the service industry, music, and construction. My

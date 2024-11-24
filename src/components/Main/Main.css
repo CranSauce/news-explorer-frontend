@@ -2,6 +2,8 @@
   padding: 40px;
   justify-content: center;
   align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .main__more-btn {
@@ -24,6 +26,20 @@
   background-color: rgba(232, 232, 232, 1);
 }
 
+
+
+.main__title {
+  font-weight: 400;
+  font-size: 30px;
+  font-family: 'Roboto Slab', sans-serif;
+  text-align: left; /* Align text to the left */
+  margin-bottom: 20px; /* Add spacing from the cards */
+  width: 100%; /* Ensure it spans the full container width */
+  max-width: 1440px; /* Match the card layout width */
+  box-sizing: border-box;
+}
+
+
 @media screen and (max-width: 728px) {
   .main__content {
     padding: 40px;
@@ -41,6 +57,16 @@
     justify-content: center;
     border-radius: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media screen and (max-width: 557px) {
+  .main__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0; */
+    left: 0;
   }
 }
 

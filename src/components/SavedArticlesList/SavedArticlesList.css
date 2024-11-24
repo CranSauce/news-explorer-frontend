@@ -1,13 +1,13 @@
 .saved-articles-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row */
-  gap: 20px; /* Maintain gap between cards */
-  padding: 80px 30px 80px 50px; /* Add padding inside the list container */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  padding: 80px 30px 80px 50px; 
   list-style: none;
-  /* box-sizing: border-box; Ensure padding doesn't affect layout */
+  box-sizing: border-box; 
 }
 
-/* Individual list item styling */
+
 .saved-articles-list li {
   list-style: none;
   max-width: 400px;
@@ -18,13 +18,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 20px;
-    margin-top: 20px; /* Adjust margin for medium screens */
+    margin-top: 20px; 
   }
 }
 
 @media screen and (max-width: 728px) {
   .saved-articles-list {
-    grid-template-columns: repeat(3, 1fr); /* Show 2 cards per row */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 16px;
     padding: 20px;
     margin-top: 20px;
@@ -33,10 +33,10 @@
 
 @media screen and (max-width: 421px) {
   .saved-articles-list {
-    grid-template-columns: repeat(1, 1fr); /* Keep 1 card per row */
+    grid-template-columns: repeat(1, 1fr);
     gap: 12px;
     padding: 10px;
-    margin-top: 32px; /* Adjust spacing for very small screens */
+    margin-top: 32px;
   }
 
   .saved-articles-list li {

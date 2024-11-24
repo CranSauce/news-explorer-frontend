@@ -1,45 +1,41 @@
 .news-card-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row */
-  gap: 20px; /* Maintain gap between cards */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 0 auto;
   padding: 30px;
-  list-style: none;
-  margin: 0;
-  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
 }
+
 
 .news-card-list li {
   list-style: none;
 }
 
-@media screen and (max-width: 960px) {
-  .news-card-list {
-    grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row on medium screens */
-    gap: 16px; /* Reduce gap for smaller screens */
-    padding: 20px;
-  }
-}
 
 @media screen and (max-width: 728px) {
   .news-card-list {
-    grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row on smaller screens */
-    gap: 16px; /* Reduce gap further */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
     padding: 20px;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 557px) {
+ @media screen and (max-width: 557px) {
   .news-card-list {
-    grid-template-columns: repeat(2, 1fr); /* Show 2 cards per row on smaller screens */
-    gap: 16px; /* Reduce gap further */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; 
     padding: 20px;
   }
-}
+} 
 
 @media screen and (max-width: 421px) {
   .news-card-list {
-    grid-template-columns: repeat(1, 1fr); /* Keep 1 card per row on very small screens */
-    gap: 12px; /* Reduce gap further */
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 12px; 
     padding: 10px;
   }
 
@@ -48,4 +44,4 @@
     justify-content: center;
     display: flex;
   }
-}
+} 

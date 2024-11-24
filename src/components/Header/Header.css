@@ -67,7 +67,6 @@
   }
 
   .header__content {
-    margin-top: 80px;
     max-width: 452px;
     position: relative;
   }
@@ -99,7 +98,6 @@
     position: relative;
     width: 320px;
     min-height: 536px;
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     color: white;

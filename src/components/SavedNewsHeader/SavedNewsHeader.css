@@ -1,6 +1,6 @@
 .saved-news-header {
   background-color: white;
-  top: 30px;
+  
   position: relative;
   display: flex;
 }
@@ -8,7 +8,7 @@
 .saved-news-header__content {
   display: flex;
   flex-direction: column;
-  padding: 90px 100px 50px;
+  padding: 50px 100px 50px;
 }
 
 .saved-new-header__title {

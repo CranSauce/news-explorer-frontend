@@ -31,8 +31,8 @@ const ModalWithForm = forwardRef(
                 type="button"
                 className="modal__sign-in-link"
                 onClick={() => {
-                  onClose(); // Close current modal
-                  openModal("login"); // Open login modal
+                  onClose(); 
+                  openModal("login"); 
                 }}
               >
                 Sign in
