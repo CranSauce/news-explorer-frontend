@@ -1,6 +1,5 @@
 .card {
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
   height: 576px;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,6 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
   box-sizing: border-box; 
 }
 
@@ -18,7 +16,7 @@
   height: 272px; 
   position: relative;
   background-color: #ccc;
-}
+} 
 
 .card__image {
   position: absolute;
@@ -26,7 +24,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill; 
+  object-fit: cover; 
 }
 
 .card__content {
@@ -42,9 +40,12 @@
 .card__description {
   font-family: 'Roboto', sans-serif;
   max-height: 80px; 
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits text to 3 lines */
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  word-wrap: break-word;
+  white-space: normal;
 }
 
 .card__save-btn-container {
@@ -177,6 +178,12 @@
   line-height: 30px;
   font-weight: 400;
   margin: 0 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits text to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .card__description {
@@ -201,23 +208,23 @@
 
 .card__image-placeholder {
   width: 100%;
-  height: 100%; /* Matches the container height */
+  height: 100%; 
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers the text */
+  align-items: center; 
   opacity: 0.7;
-  background-color: #ccc; /* Optional: match the container background */
-  text-align: center; /* Ensures text stays centered */
-  font-size: 16px; /* Placeholder text size */
-  color: #555; /* Placeholder text color */
-  box-sizing: border-box; /* Ensures padding doesn't break the layout */
+  background-color: #ccc; 
+  text-align: center; 
+  font-size: 16px; 
+  color: #555; 
+  box-sizing: border-box; 
 }
 
 @media screen and (max-width: 728px) {
   .card {
-    width: 100%; /* Let the grid control width */
-    max-width: 224px; /* Match design specs */
-    height: 420px; /* Fixed height to prevent inconsistency */
+    width: 100%; 
+    max-width: 224px;
+    height: 420px; 
   }
 
   .card__image-container {
@@ -225,9 +232,9 @@
   }
 
   .card__content {
-    height: calc(100% - 150px); /* Remaining height for content */
-    padding: 10px; /* Consistent padding */
-    box-sizing: border-box; /* Include padding in calculations */
+    height: calc(100% - 150px); 
+    padding: 10px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -260,7 +267,7 @@
 @media screen and (max-width: 320px) {
   .card {
     max-width: 288px;
-    max-height: 440px;
+    height: 440px;
     border-radius: 8px;
   }
 

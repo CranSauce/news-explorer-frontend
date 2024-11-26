@@ -70,7 +70,7 @@ const ModalWithForm = forwardRef(
                       className="modal__login-btn"
                       onClick={() => openModal("login")}
                     >
-                      or Log in
+                      or Sign in
                     </button>
                   ))}
               </form>

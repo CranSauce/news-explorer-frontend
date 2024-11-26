@@ -22,7 +22,7 @@
   line-height: 24px;
   text-align: left;
   text-decoration: none;
-  margin-left: 100px;
+  margin-left: 90px;
   color: inherit;
 }
 
@@ -111,26 +111,31 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -27px; /* Positioned at the bottom of the navigation bar */
   width: 0;
-  height: 2px;
+  height: 1px;
   background-color: white;
   transition: width 0.3s ease;
 }
 
+/* Seperate underline positioning */
 .navigation__logout-btn.nav-item::after{
-  bottom: -17px;
+  bottom: -21px;
+}
+
+.navigation__saved-btn.nav-item::after{
+  bottom: -31px;
 }
 
 .navigation__logo.nav-item::after{
-  bottom: -23px;
+  bottom: -28px;
 }
 .navigation__signin-btn.nav-item::after{
-  bottom: -20px;
+  bottom: -21px;
 }
 
 .navigation__home-btn.nav-item:hover::after{
   width: 100px;
+  bottom: -31px;
   left: -25px;
 }
 
@@ -169,6 +174,10 @@
 .navigation--saved-news .navigation__logout-btn.nav-item::after {
   background-color: black;
   top: 57px;
+}
+
+.navigation--saved-news .navigation__home-btn.nav-item{
+  /* margin-right: 93x; */
 }
 
 .navigation--saved-news .navigation__logout-btn {
@@ -221,6 +230,10 @@
     width: 100%;
     left: 0;
     top: 4px;
+  }
+
+  .navigation--saved-news .navigation__home-btn.nav-item{
+    margin-right: 20px;
   }
 }
 

@@ -1,13 +1,16 @@
+/* NewsCardList.css */
 .news-card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, 410px);
+  justify-content: center; /* Center the grid */
   gap: 16px;
   margin: 0 auto;
   padding: 30px;
   width: 100%;
   box-sizing: border-box;
-  max-width: 1200px;
+  max-width: 1440px; /* Match the viewport width */
 }
+
 
 
 .news-card-list li {
@@ -20,7 +23,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     padding: 20px;
-    width: 100%;
+    width: 100vw;
+    flex-shrink: 0;
   }
 }
 
@@ -35,7 +39,6 @@
 @media screen and (max-width: 421px) {
   .news-card-list {
     grid-template-columns: repeat(1, 1fr); 
-    gap: 12px; 
     padding: 10px;
   }
 

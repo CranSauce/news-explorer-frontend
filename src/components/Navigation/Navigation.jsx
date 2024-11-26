@@ -63,14 +63,15 @@ function Navigation({ isSavedNews, isLoggedIn, handleLogout, openModal }) {
                 Sign in
               </button>
             )}
-            {isLoggedIn && (
-              <button
-                className="navigation__logout-btn nav-item"
-                onClick={handleLogout}
-              >
-                Logout
-              </button>
-            )}
+            {(isLoggedIn || isSavedNews) && (
+  <button
+    className="navigation__logout-btn nav-item"
+    onClick={handleLogout}
+  >
+    Logout
+  </button>
+)}
+
           </div>
         </>
       )}

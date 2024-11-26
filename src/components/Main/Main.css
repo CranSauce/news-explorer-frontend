@@ -32,10 +32,11 @@
   font-weight: 400;
   font-size: 30px;
   font-family: 'Roboto Slab', sans-serif;
-  text-align: left; /* Align text to the left */
-  margin-bottom: 20px; /* Add spacing from the cards */
-  width: 100%; /* Ensure it spans the full container width */
-  max-width: 1440px; /* Match the card layout width */
+  text-align: left; 
+  margin-bottom: 20px; 
+  padding-left: 90px;
+  width: 100%; 
+  max-width: 1440px; 
   box-sizing: border-box;
 }
 
@@ -46,6 +47,11 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+  }
+
+  .main__title{
+    padding: 0;
+    width: 94vw;
   }
 
   .main__more-btn {
@@ -60,15 +66,7 @@
   }
 }
 
-@media screen and (max-width: 557px) {
-  .main__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin: 0; */
-    left: 0;
-  }
-}
+
 
 @media screen and (max-width: 320px) {
   .main__content {
@@ -92,6 +90,7 @@
     line-height: 34px;
     margin: 0 0 38px 0;
     display: flex;
+    width: 90vw;
   }
 
   .main__more-btn {
