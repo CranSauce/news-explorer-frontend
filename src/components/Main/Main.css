@@ -40,6 +40,10 @@
   box-sizing: border-box;
 }
 
+.main__error{
+  padding-left: 90px;
+}
+
 
 @media screen and (max-width: 728px) {
   .main__content {

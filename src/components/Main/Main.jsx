@@ -24,7 +24,7 @@ function Main({
         {loading && <Preloader />}
 
         {articles.length === 0 && !loading && !error && (
-          <p>No results found.</p>
+          <p className="main__error">No results found.</p>
         )}
 
         {articles.length > 0 && (

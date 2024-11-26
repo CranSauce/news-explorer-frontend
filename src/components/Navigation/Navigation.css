@@ -176,10 +176,6 @@
   top: 57px;
 }
 
-.navigation--saved-news .navigation__home-btn.nav-item{
-  /* margin-right: 93x; */
-}
-
 .navigation--saved-news .navigation__logout-btn {
   background-image: url(../../assets/logout.svg);
   background-color: white;
