@@ -8,4 +8,5 @@ export default defineConfig({server :{
   },
 },
   plugins: [react()],
+  base: '/news-explorer-frontend/',
 })
