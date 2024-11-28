@@ -1,0 +1,50 @@
+/* NewsCardList.css */
+.news-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 410px);
+  justify-content: center; /* Center the grid */
+  gap: 16px;
+  margin: 0 auto;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1440px; /* Match the viewport width */
+}
+
+
+
+.news-card-list li {
+  list-style: none;
+}
+
+
+@media screen and (max-width: 728px) {
+  .news-card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    padding: 20px;
+    width: 100vw;
+    flex-shrink: 0;
+  }
+}
+
+ @media screen and (max-width: 557px) {
+  .news-card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; 
+    padding: 20px;
+  }
+} 
+
+@media screen and (max-width: 421px) {
+  .news-card-list {
+    grid-template-columns: repeat(1, 1fr); 
+    padding: 10px;
+  }
+
+  .news-card-list li{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+} 
