@@ -38,6 +38,6 @@ News Explorer is a front-end web application that allows users to search for and
 
 ## Links
 
-- **Visit Website**: [news-explorer.clienturl.net](cransauce.github.io/news-explorer-frontend)  
+- **Visit Website**: [Github Pages](cransauce.github.io/news-explorer-frontend)  
 - **Frontend Repository**: [GitHub - CranSauce/news-explorer-frontend](https://github.com/CranSauce/news-explorer-frontend)  
 - **API Documentation**: [News API Documentation](https://newsapi.org/docs)
