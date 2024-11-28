@@ -29,7 +29,7 @@ News Explorer is a front-end web application that allows users to search for and
 
 ### Backend
 
-- No backend required – API-powered application fetching data from a third-party service.
+- Backend currently under construction
 
 ### Deployment
 
