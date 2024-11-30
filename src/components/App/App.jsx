@@ -100,7 +100,7 @@ function App() {
   return (
     <div className="page">
       <div className="page__content">
-        <Router>
+        <Router basename="/news-explorer-frontend">
           <Routes>
             <Route
               path="/"
