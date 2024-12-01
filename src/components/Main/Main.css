@@ -95,6 +95,7 @@
     margin: 0 0 38px 0;
     display: flex;
     width: 90vw;
+    justify-content: center;
   }
 
   .main__more-btn {
@@ -104,5 +105,8 @@
     height: 56px;
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .main__error{
+    padding: 0;
   }
 }
